@@ -3,7 +3,7 @@ project(cgse)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(cgse main.cpp)
+add_executable(cgse main.cpp shader/shader.h)
 
 target_sources(cgse PRIVATE lib/glad/glad.c)
 target_link_libraries(cgse glfw)
