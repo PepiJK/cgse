@@ -117,18 +117,25 @@ int main()
         -0.5f,  0.5f,  0.5f,  0.0f,  0.0f,
         -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,
 
-         -0.5f,  0.5f,  0.5f,  0.0f,  0.0f,
-         -0.5f,  0.5f, -0.5f,  1.0f,  1.0f,
-         -0.5f,  1.0f,  0.0f,  1.0f,  0.0f,
-          0.5f,  0.5f,  0.5f,  0.0f,  0.0f,
-          0.5f,  0.5f, -0.5f,  1.0f,  1.0f,
-          0.5f,  1.0f,  0.0f,  1.0f,  0.0f,
-         -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,
-         -0.5f, -0.5f, -0.5f,  1.0f,  1.0f,
-         -0.5f, -1.0f,  0.0f,  1.0f,  0.0f,
-          0.5f, -0.5f,  0.5f,  0.0f,  0.0f,
-          0.5f, -0.5f, -0.5f,  1.0f,  1.0f,
-          0.5f, -1.0f,  0.0f,  1.0f,  0.0f,
+        -0.5f, 0.5f,  0.5f,  0.0f,  0.0f,
+         0.5f, 0.5f,  0.5f,  1.0f,  1.0f,
+         0.0f, 1.0f,  0.0f,  1.0f,  0.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,
+         0.5f, -0.5f,  0.5f,  1.0f,  1.0f,
+         0.0f, -1.0f,  0.0f,  1.0f,  0.0f,
+
+        -0.5f,  0.5f,  0.5f,  0.0f,  0.0f,
+        -0.5f,  0.5f, -0.5f,  1.0f,  1.0f,
+        -0.5f,  1.0f,  0.0f,  1.0f,  0.0f,
+         0.5f,  0.5f,  0.5f,  0.0f,  0.0f,
+         0.5f,  0.5f, -0.5f,  1.0f,  1.0f,
+         0.5f,  1.0f,  0.0f,  1.0f,  0.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,
+        -0.5f, -0.5f, -0.5f,  1.0f,  1.0f,
+        -0.5f, -1.0f,  0.0f,  1.0f,  0.0f,
+         0.5f, -0.5f,  0.5f,  0.0f,  0.0f,
+         0.5f, -0.5f, -0.5f,  1.0f,  1.0f,
+         0.5f, -1.0f,  0.0f,  1.0f,  0.0f,
     };
     float windowVertices[] = {
          // positions         // texture coords (swapped y coordinates because cubeTexture is flipped upside down)
@@ -252,10 +259,13 @@ int main()
             }
             ourShader.setMat4("model", model);
 
-            if (glm::length(cameraPos) > 10)
+            if (glm::length(cameraPos) > 20)
                 glDrawArrays(GL_TRIANGLES, 0, 36);
+            else if (glm::length(cameraPos) > 10)
+                glDrawArrays(GL_TRIANGLES, 0, 42);
             else
-                glDrawArrays(GL_TRIANGLES, 0, 48);
+                glDrawArrays(GL_TRIANGLES, 0, 54);
+
         }
 
         // sort the transparent windows before rendering
