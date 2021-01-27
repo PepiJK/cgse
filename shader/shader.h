@@ -1,7 +1,7 @@
 #ifndef CGSE_SHADER_H
 #define CGSE_SHADER_H
 
-#include "../lib/glad/glad.h"
+#include <GL/glew.h>
 #include <glm/glm.hpp>
 
 #include <string>
